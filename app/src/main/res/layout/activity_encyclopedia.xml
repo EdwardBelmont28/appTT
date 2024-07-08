@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -8,27 +8,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:gravity="center_horizontal">
+        android:padding="8dp"
+        android:gravity="center_horizontal"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="8dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enciclopedia"
             android:textSize="24sp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             android:gravity="center"/>
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:background="#D3D3D3"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="4dp"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="4dp">
 
             <TextView
                 android:id="@+id/tv_avance"
@@ -47,7 +49,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ProgressBar
@@ -55,25 +56,39 @@
             style="@android:style/Widget.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:progress="0"
-            android:max="100"/>
+            android:max="100"
+            android:layout_marginBottom="8dp"/>
+    </LinearLayout>
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="130dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Nivel 1 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nivel 1"
             android:textSize="20sp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="8dp"/>
 
         <!-- Cuadro para la lección 1 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="8dp"
             android:background="@drawable/box_background"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -97,9 +112,9 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:background="#D3D3D3"
-                android:layout_marginVertical="8dp"/>
+                android:layout_marginVertical="4dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -108,13 +123,13 @@
                 android:gravity="center"/>
 
             <Button
-                android:id="@+id/btn_comenzar_1"
+                android:id="@+id/btn_comenzar_leccion_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Comenzar"
                 android:background="#696969"
                 android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="4dp"/>
         </LinearLayout>
 
         <!-- Cuadro para el cuestionario 1 -->
@@ -122,9 +137,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="8dp"
             android:background="@drawable/box_background"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -148,9 +163,9 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:background="#D3D3D3"
-                android:layout_marginVertical="8dp"/>
+                android:layout_marginVertical="4dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -165,25 +180,25 @@
                 android:text="Comenzar Cuestionario"
                 android:background="#696969"
                 android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="4dp"/>
         </LinearLayout>
 
+        <!-- Nivel 2 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nivel 2"
             android:textSize="20sp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="8dp"/>
 
-        <!-- Nivel 2 -->
         <!-- Cuadro para la lección 2 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="8dp"
             android:background="@drawable/box_background"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -207,9 +222,9 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:background="#D3D3D3"
-                android:layout_marginVertical="8dp"/>
+                android:layout_marginVertical="4dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -218,13 +233,13 @@
                 android:gravity="center"/>
 
             <Button
-                android:id="@+id/btn_comenzar_2"
+                android:id="@+id/btn_comenzar_leccion_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Comenzar"
                 android:background="#696969"
                 android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="4dp"/>
         </LinearLayout>
 
         <!-- Cuadro para el cuestionario 2 -->
@@ -232,9 +247,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="8dp"
             android:background="@drawable/box_background"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -258,9 +273,9 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:background="#D3D3D3"
-                android:layout_marginVertical="8dp"/>
+                android:layout_marginVertical="4dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -275,25 +290,25 @@
                 android:text="Comenzar Cuestionario"
                 android:background="#696969"
                 android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="4dp"/>
         </LinearLayout>
 
+        <!-- Nivel 3 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nivel 3"
             android:textSize="20sp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="8dp"/>
 
-        <!-- Nivel 3 -->
         <!-- Cuadro para la lección 3 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="8dp"
             android:background="@drawable/box_background"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -317,9 +332,9 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:background="#D3D3D3"
-                android:layout_marginVertical="8dp"/>
+                android:layout_marginVertical="4dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -328,13 +343,13 @@
                 android:gravity="center"/>
 
             <Button
-                android:id="@+id/btn_comenzar_3"
+                android:id="@+id/btn_comenzar_leccion_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Comenzar"
                 android:background="#696969"
                 android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="4dp"/>
         </LinearLayout>
 
         <!-- Cuadro para el cuestionario 3 -->
@@ -342,9 +357,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="8dp"
             android:background="@drawable/box_background"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -368,9 +383,9 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:background="#D3D3D3"
-                android:layout_marginVertical="8dp"/>
+                android:layout_marginVertical="4dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -385,25 +400,25 @@
                 android:text="Comenzar Cuestionario"
                 android:background="#696969"
                 android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="4dp"/>
         </LinearLayout>
 
+        <!-- Nivel 4 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nivel 4"
             android:textSize="20sp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="8dp"/>
 
-        <!-- Nivel 4 -->
         <!-- Cuadro para la lección 4 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="8dp"
             android:background="@drawable/box_background"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -427,9 +442,9 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:background="#D3D3D3"
-                android:layout_marginVertical="8dp"/>
+                android:layout_marginVertical="4dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -438,13 +453,13 @@
                 android:gravity="center"/>
 
             <Button
-                android:id="@+id/btn_comenzar_4"
+                android:id="@+id/btn_comenzar_leccion_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Comenzar"
                 android:background="#696969"
                 android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="4dp"/>
         </LinearLayout>
 
         <!-- Cuadro para el cuestionario 4 -->
@@ -452,9 +467,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="8dp"
             android:background="@drawable/box_background"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -478,9 +493,9 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:background="#D3D3D3"
-                android:layout_marginVertical="8dp"/>
+                android:layout_marginVertical="4dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -495,25 +510,25 @@
                 android:text="Comenzar Cuestionario"
                 android:background="#696969"
                 android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="4dp"/>
         </LinearLayout>
 
+        <!-- Nivel 5 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nivel 5"
             android:textSize="20sp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="8dp"/>
 
-        <!-- Nivel 5 -->
         <!-- Cuadro para la lección 5 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="8dp"
             android:background="@drawable/box_background"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -537,9 +552,9 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:background="#D3D3D3"
-                android:layout_marginVertical="8dp"/>
+                android:layout_marginVertical="4dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -548,13 +563,13 @@
                 android:gravity="center"/>
 
             <Button
-                android:id="@+id/btn_comenzar_5"
+                android:id="@+id/btn_comenzar_leccion_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Comenzar"
                 android:background="#696969"
                 android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="4dp"/>
         </LinearLayout>
 
         <!-- Cuadro para el cuestionario 5 -->
@@ -562,9 +577,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="8dp"
             android:background="@drawable/box_background"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -588,9 +603,9 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:background="#D3D3D3"
-                android:layout_marginVertical="8dp"/>
+                android:layout_marginVertical="4dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -605,8 +620,8 @@
                 android:text="Comenzar Cuestionario"
                 android:background="#696969"
                 android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="4dp"/>
         </LinearLayout>
-
     </LinearLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
