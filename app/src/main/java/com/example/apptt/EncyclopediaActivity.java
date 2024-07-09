@@ -1,6 +1,8 @@
 package com.example.apptt;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EncyclopediaActivity extends AppCompatActivity {
@@ -10,6 +12,12 @@ public class EncyclopediaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_encyclopedia);
 
-        // Puedes agregar aquí la lógica para actualizar la barra de progreso y el porcentaje
+        Button btnReload = findViewById(R.id.btn_reload);
+        btnReload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recreate();
+            }
+        });
     }
 }

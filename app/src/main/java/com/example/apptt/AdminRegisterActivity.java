@@ -14,7 +14,7 @@ public class AdminRegisterActivity extends AppCompatActivity {
     }
 
     public void onAdminRegisterClick(View view) {
-        // Implementar la lógica de registro del administrador aquí
+        // Implementar registro del administrador aquí
         Intent intent = new Intent(AdminRegisterActivity.this, AdminLoginActivity.class);
         startActivity(intent);
     }
