@@ -84,14 +84,5 @@
             android:textStyle="bold"
             android:layout_marginBottom="16dp"
             android:onClick="onForgotPasswordClick"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Iniciar Como Administrador"
-            android:textColor="@color/purple_200"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp"
-            android:onClick="onAdminLoginClick"/>
     </LinearLayout>
 </ScrollView>

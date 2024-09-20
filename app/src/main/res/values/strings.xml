@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">appTT</string>
+
+    <!-- Opciones para el Spinner de Categoría -->
+    <string-array name="opciones_categoria">
+        <item>Categoría 1</item>
+        <item>Categoría 2</item>
+        <item>Categoría 3</item>
+        <item>Categoría 4</item>
+        <item>Categoría 5</item>
+    </string-array>
+
+    <string-array name="opciones_tipo">
+        <item>Opción 1</item>
+        <item>Opción 2</item>
+        <item>Opción 3</item>
+        <item>Opción 4</item>
+        <item>Opción 5</item>
+    </string-array>
 </resources>

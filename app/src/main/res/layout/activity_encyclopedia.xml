@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Parte superior con el título "Polliwallet" -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enciclopedia"
+            android:text="Polliwallet"
             android:textSize="24sp"
             android:layout_marginBottom="4dp"
             android:gravity="center"/>
@@ -27,606 +28,71 @@
             android:layout_height="1dp"
             android:background="#D3D3D3"
             android:layout_marginBottom="4dp"/>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp">
-
-            <TextView
-                android:id="@+id/tv_avance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Avance"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
-            <TextView
-                android:id="@+id/tv_porcentaje"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0%"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:progress="0"
-            android:max="100"
-            android:layout_marginBottom="8dp"/>
     </LinearLayout>
 
+    <!-- Scrollable Area con el contenido especificado -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="130dp"
-        android:layout_marginBottom="72dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="596dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="72dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="16dp">
 
-            <!-- Nivel 1 -->
+
+            <!-- Leyenda con ícono y texto Introducción -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Icono"
+                    android:src="@drawable/ic_launcher_foreground" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Introducción"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <!-- Línea divisoria -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="8dp"
+                android:background="#D3D3D3" />
+
+            <!-- Leyenda Descripción -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nivel 1"
-                android:textSize="20sp"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="8dp"
+                android:text="Descripción"
+                android:textSize="18sp" />
 
-            <!-- Cuadro para la lección 1 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:background="@drawable/box_background"
-                android:layout_marginBottom="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_file"
-                        android:layout_gravity="center"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lección 1"
-                        android:layout_marginStart="8dp"
-                        android:gravity="center"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#D3D3D3"
-                    android:layout_marginVertical="4dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Título de la lección 1"
-                    android:gravity="center"/>
-
-                <Button
-                    android:id="@+id/btn_comenzar_leccion_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Comenzar"
-                    android:background="#696969"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginTop="4dp"/>
-            </LinearLayout>
-
-            <!-- Cuadro para el cuestionario 1 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:background="@drawable/box_background"
-                android:layout_marginBottom="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_file"
-                        android:layout_gravity="center"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cuestionario 1"
-                        android:layout_marginStart="8dp"
-                        android:gravity="center"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#D3D3D3"
-                    android:layout_marginVertical="4dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Título del cuestionario 1"
-                    android:gravity="center"/>
-
-                <Button
-                    android:id="@+id/btn_comenzar_cuestionario_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Comenzar Cuestionario"
-                    android:background="#696969"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginTop="4dp"/>
-            </LinearLayout>
-
-            <!-- Nivel 2 -->
+            <!-- Aquí podrás escribir el texto de la Descripción -->
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nivel 2"
-                android:textSize="20sp"
-                android:layout_marginBottom="8dp"/>
-
-            <!-- Cuadro para la lección 2 -->
-            <LinearLayout
+                android:id="@+id/tv_descripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:background="@drawable/box_background"
-                android:layout_marginBottom="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_file"
-                        android:layout_gravity="center"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lección 2"
-                        android:layout_marginStart="8dp"
-                        android:gravity="center"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#D3D3D3"
-                    android:layout_marginVertical="4dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Título de la lección 2"
-                    android:gravity="center"/>
-
-                <Button
-                    android:id="@+id/btn_comenzar_leccion_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Comenzar"
-                    android:background="#696969"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginTop="4dp"/>
-            </LinearLayout>
-
-            <!-- Cuadro para el cuestionario 2 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:background="@drawable/box_background"
-                android:layout_marginBottom="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_file"
-                        android:layout_gravity="center"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cuestionario 2"
-                        android:layout_marginStart="8dp"
-                        android:gravity="center"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#D3D3D3"
-                    android:layout_marginVertical="4dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Título del cuestionario 2"
-                    android:gravity="center"/>
-
-                <Button
-                    android:id="@+id/btn_comenzar_cuestionario_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Comenzar Cuestionario"
-                    android:background="#696969"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginTop="4dp"/>
-            </LinearLayout>
-
-            <!-- Nivel 3 -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nivel 3"
-                android:textSize="20sp"
-                android:layout_marginBottom="8dp"/>
-
-            <!-- Cuadro para la lección 3 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:background="@drawable/box_background"
-                android:layout_marginBottom="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_file"
-                        android:layout_gravity="center"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lección 3"
-                        android:layout_marginStart="8dp"
-                        android:gravity="center"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#D3D3D3"
-                    android:layout_marginVertical="4dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Título de la lección 3"
-                    android:gravity="center"/>
-
-                <Button
-                    android:id="@+id/btn_comenzar_leccion_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Comenzar"
-                    android:background="#696969"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginTop="4dp"/>
-            </LinearLayout>
-
-            <!-- Cuadro para el cuestionario 3 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:background="@drawable/box_background"
-                android:layout_marginBottom="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_file"
-                        android:layout_gravity="center"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cuestionario 3"
-                        android:layout_marginStart="8dp"
-                        android:gravity="center"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#D3D3D3"
-                    android:layout_marginVertical="4dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Título del cuestionario 3"
-                    android:gravity="center"/>
-
-                <Button
-                    android:id="@+id/btn_comenzar_cuestionario_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Comenzar Cuestionario"
-                    android:background="#696969"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginTop="4dp"/>
-            </LinearLayout>
-
-            <!-- Nivel 4 -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nivel 4"
-                android:textSize="20sp"
-                android:layout_marginBottom="8dp"/>
-
-            <!-- Cuadro para la lección 4 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:background="@drawable/box_background"
-                android:layout_marginBottom="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_file"
-                        android:layout_gravity="center"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lección 4"
-                        android:layout_marginStart="8dp"
-                        android:gravity="center"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#D3D3D3"
-                    android:layout_marginVertical="4dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Título de la lección 4"
-                    android:gravity="center"/>
-
-                <Button
-                    android:id="@+id/btn_comenzar_leccion_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Comenzar"
-                    android:background="#696969"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginTop="4dp"/>
-            </LinearLayout>
-
-            <!-- Cuadro para el cuestionario 4 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:background="@drawable/box_background"
-                android:layout_marginBottom="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_file"
-                        android:layout_gravity="center"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cuestionario 4"
-                        android:layout_marginStart="8dp"
-                        android:gravity="center"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#D3D3D3"
-                    android:layout_marginVertical="4dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Título del cuestionario 4"
-                    android:gravity="center"/>
-
-                <Button
-                    android:id="@+id/btn_comenzar_cuestionario_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Comenzar Cuestionario"
-                    android:background="#696969"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginTop="4dp"/>
-            </LinearLayout>
-
-            <!-- Nivel 5 -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nivel 5"
-                android:textSize="20sp"
-                android:layout_marginBottom="8dp"/>
-
-            <!-- Cuadro para la lección 5 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:background="@drawable/box_background"
-                android:layout_marginBottom="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_file"
-                        android:layout_gravity="center"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lección 5"
-                        android:layout_marginStart="8dp"
-                        android:gravity="center"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#D3D3D3"
-                    android:layout_marginVertical="4dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Título de la lección 5"
-                    android:gravity="center"/>
-
-                <Button
-                    android:id="@+id/btn_comenzar_leccion_5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Comenzar"
-                    android:background="#696969"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginTop="4dp"/>
-            </LinearLayout>
-
-            <!-- Cuadro para el cuestionario 5 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:background="@drawable/box_background"
-                android:layout_marginBottom="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_file"
-                        android:layout_gravity="center"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cuestionario 5"
-                        android:layout_marginStart="8dp"
-                        android:gravity="center"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#D3D3D3"
-                    android:layout_marginVertical="4dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Título del cuestionario 5"
-                    android:gravity="center"/>
-
-                <Button
-                    android:id="@+id/btn_comenzar_cuestionario_5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Comenzar Cuestionario"
-                    android:background="#696969"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginTop="4dp"/>
-            </LinearLayout>
+                android:layout_marginBottom="16dp"
+                android:text="Aquí podrás escribir el texto de la descripción..."
+                android:textSize="16sp" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
+    <!-- Barra inferior con 4 botones estáticos -->
     <LinearLayout
         android:id="@+id/static_bottom_layout"
         android:layout_width="match_parent"
@@ -666,6 +132,15 @@
             android:background="#696969"
             android:textColor="#FFFFFF"/>
 
+        <Button
+            android:id="@+id/btn_option4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Opción 4"
+            android:layout_margin="8dp"
+            android:background="#696969"
+            android:textColor="#FFFFFF"/>
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

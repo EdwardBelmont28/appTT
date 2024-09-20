@@ -28,11 +28,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onAdminLoginClick(View view) {
-        Intent intent = new Intent(MainActivity.this, AdminLoginActivity.class);
-        startActivity(intent);
-    }
-
     public void onForgotPasswordClick(View view) {
         Intent intent = new Intent(MainActivity.this, ForgotPasswordActivity.class);
         startActivity(intent);
