@@ -3,19 +3,33 @@ package com.example.apptt;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EncyclopediaActivity extends AppCompatActivity {
 
+    private boolean[] isExpanded = new boolean[9]; // Controla el estado de expansión de cada cuadro
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_encyclopedia);
 
-        // Inicializar el TextView para la descripción
-        TextView tvDescripcion = findViewById(R.id.tv_descripcion);
+        // Inicializar y configurar todos los cuadros (9 en total)
+        configurarCuadro(R.id.image_concept1, R.id.tv_concept_description1, 0);
+        configurarCuadro(R.id.image_concept2, R.id.tv_concept_description2, 1);
+        configurarCuadro(R.id.image_concept3, R.id.tv_concept_description3, 2);
+        configurarCuadro(R.id.image_concept4, R.id.tv_concept_description4, 3);
+        configurarCuadro(R.id.image_concept5, R.id.tv_concept_description5, 4);
+        configurarCuadro(R.id.image_concept6, R.id.tv_concept_description6, 5);
+        configurarCuadro(R.id.image_concept7, R.id.tv_concept_description7, 6);
+        configurarCuadro(R.id.image_concept8, R.id.tv_concept_description8, 7);
+        configurarCuadro(R.id.image_concept9, R.id.tv_concept_description9, 8);
+
+        // Inicializar el TextView para la descripción de la introducción
+        final TextView tvDescripcion = findViewById(R.id.tv_descripcion);
         tvDescripcion.setText("Aquí podrás escribir el texto de la descripción...");
 
         // Inicializar los botones
@@ -28,9 +42,7 @@ public class EncyclopediaActivity extends AppCompatActivity {
         btnReload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Acciones a realizar cuando se presione el botón "Recargar"
-                Toast.makeText(EncyclopediaActivity.this, "Recargando...", Toast.LENGTH_SHORT).show();
-                // Aquí puedes agregar lógica adicional para recargar los datos
+                recreate(); // Recargar la actividad
             }
         });
 
@@ -38,24 +50,48 @@ public class EncyclopediaActivity extends AppCompatActivity {
         btnOption2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Acciones para el botón Opción 2
-                Toast.makeText(EncyclopediaActivity.this, "Opción 2 seleccionada", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EncyclopediaActivity.this, "Balance seleccionado", Toast.LENGTH_SHORT).show();
             }
         });
 
         btnOption3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Acciones para el botón Opción 3
-                Toast.makeText(EncyclopediaActivity.this, "Opción 3 seleccionada", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EncyclopediaActivity.this, "Ahorros seleccionados", Toast.LENGTH_SHORT).show();
             }
         });
 
         btnOption4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Acciones para el botón Opción 4
-                Toast.makeText(EncyclopediaActivity.this, "Opción 4 seleccionada", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EncyclopediaActivity.this, "Endeudamiento seleccionado", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    // Método para configurar cada cuadro con la funcionalidad de expansión
+    private void configurarCuadro(int imageId, final int descriptionId, final int index) {
+        ImageView imageConcept = findViewById(imageId);
+        final TextView tvConceptDescription = findViewById(descriptionId);
+
+        // Inicializar la descripción con un texto largo, pero solo se muestran 2 líneas al inicio
+        tvConceptDescription.setText("Esta es una descripción completa del Concepto " + (index + 1) + ". Antes de expandir solo se mostrará una parte del texto...");
+
+        // Manejar el clic en la imagen para expandir o colapsar la descripción
+        imageConcept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isExpanded[index]) {
+                    // Si está expandido, colapsar la descripción a 2 líneas
+                    tvConceptDescription.setMaxLines(2);
+                    tvConceptDescription.setEllipsize(android.text.TextUtils.TruncateAt.END);
+                    isExpanded[index] = false;
+                } else {
+                    // Si está colapsado, expandir para mostrar toda la descripción
+                    tvConceptDescription.setMaxLines(Integer.MAX_VALUE);
+                    tvConceptDescription.setEllipsize(null);
+                    isExpanded[index] = true;
+                }
             }
         });
     }
