@@ -1,5 +1,6 @@
 package com.example.apptt;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -46,25 +47,30 @@ public class EncyclopediaActivity extends AppCompatActivity {
             }
         });
 
-        // Manejar el clic en los otros botones
+        // Manejar el clic en el botón "Balance" (navegar a BalanceActivity)
         btnOption2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(EncyclopediaActivity.this, "Balance seleccionado", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(EncyclopediaActivity.this, BalanceActivity.class);
+                startActivity(intent);
             }
         });
 
+        // Manejar el clic en el botón "Ahorros" (navegar a AhorroActivity)
         btnOption3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(EncyclopediaActivity.this, "Ahorros seleccionados", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(EncyclopediaActivity.this, AhorroActivity.class);
+                startActivity(intent);
             }
         });
 
+        // Manejar el clic en el botón "Endeudamiento" (navegar a EndeudamientoActivity)
         btnOption4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(EncyclopediaActivity.this, "Endeudamiento seleccionado", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(EncyclopediaActivity.this, EndeudamientoActivity.class);
+                startActivity(intent);
             }
         });
     }

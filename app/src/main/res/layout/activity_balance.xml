@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Parte superior con el título "Balance Mensual" -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:gravity="center_horizontal"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Polliwallet"
+            android:textSize="24sp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#D3D3D3"
+            android:layout_marginBottom="4dp"/>
+    </LinearLayout>
+
+    <!-- Scrollable Area con el contenido de Balance y el nuevo formato -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="72dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center_horizontal">
+
+            <!-- Leyenda con ícono y texto "Balance" -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Icono"
+                    android:src="@drawable/ic_launcher_foreground" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Balance Mensual"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <!-- Línea divisoria -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="8dp"
+                android:background="#D3D3D3" />
+
+            <!-- Leyenda Descripción -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Introducción"
+                android:textSize="18sp" />
+
+            <!-- Aquí podrás escribir el texto de la Descripción -->
+            <TextView
+                android:id="@+id/tv_descripcion_balance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Aquí podrás escribir el texto de la descripción de la actividad Balance..."
+                android:textSize="16sp" />
+
+            <!-- NUEVO CONTENIDO -->
+
+            <!-- Leyenda "Descripción" -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descripción"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Aquí puedes escribir el texto de la descripción -->
+            <TextView
+                android:id="@+id/tv_descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aquí puedes escribir el texto de la descripción..."
+                android:textSize="16sp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Leyenda "Ingresos" -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingresos"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Leyenda "Categoría" -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categoría"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Spinner (barra desplegable) con 5 opciones para Categoría -->
+            <Spinner
+                android:id="@+id/spinner_categoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Leyenda "Tipo" -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tipo"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Spinner (barra desplegable) con 5 opciones para Tipo -->
+            <Spinner
+                android:id="@+id/spinner_tipo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Leyenda "Monto" -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monto"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Campo de texto para ingresar un monto -->
+            <EditText
+                android:id="@+id/et_monto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="Ingrese un monto"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Botón debajo del monto -->
+            <Button
+                android:id="@+id/btn_guardar_monto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guardar Monto"
+                android:background="#696969"
+                android:textColor="#FFFFFF"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Barra inferior con 4 botones estáticos -->
+    <LinearLayout
+        android:id="@+id/static_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:layout_gravity="bottom">
+
+        <Button
+            android:id="@+id/btn_enciclopedia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Enciclopedia"
+            android:layout_margin="8dp"
+            android:background="#696969"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btn_balance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Balance"
+            android:layout_margin="8dp"
+            android:background="#696969"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btn_ahorros"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ahorros"
+            android:layout_margin="8dp"
+            android:background="#696969"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btn_endeudamiento"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Endeudamiento"
+            android:layout_margin="8dp"
+            android:background="#696969"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

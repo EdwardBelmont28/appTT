@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Parte superior con el título "Polliwallet" -->
+    <!-- Parte superior con el título -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
             android:layout_marginBottom="4dp"/>
     </LinearLayout>
 
-    <!-- Scrollable Area con Enciclopedia, Introducción y los 9 cuadros -->
+    <!-- Scrollable Area -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,7 +44,7 @@
             android:padding="16dp"
             android:gravity="center_horizontal">
 
-            <!-- Leyenda con ícono y texto Enciclopedia -->
+            <!-- Leyenda con ícono y texto -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -91,7 +91,6 @@
                 android:textSize="16sp" />
 
             <!-- Repetir Cuadro para cada concepto -->
-            <!-- Cuadro 1 -->
             <LinearLayout
                 android:id="@+id/layout_expandable1"
                 android:layout_width="300dp"
@@ -128,7 +127,6 @@
                     android:layout_marginTop="4dp"/>
             </LinearLayout>
 
-            <!-- Cuadro 2 -->
             <LinearLayout
                 android:id="@+id/layout_expandable2"
                 android:layout_width="300dp"
@@ -165,7 +163,6 @@
                     android:layout_marginTop="4dp"/>
             </LinearLayout>
 
-            <!-- Cuadro 3 -->
             <LinearLayout
                 android:id="@+id/layout_expandable3"
                 android:layout_width="300dp"
@@ -202,7 +199,6 @@
                     android:layout_marginTop="4dp"/>
             </LinearLayout>
 
-            <!-- Cuadro 4 -->
             <LinearLayout
                 android:id="@+id/layout_expandable4"
                 android:layout_width="300dp"
@@ -239,7 +235,6 @@
                     android:layout_marginTop="4dp"/>
             </LinearLayout>
 
-            <!-- Cuadro 5 -->
             <LinearLayout
                 android:id="@+id/layout_expandable5"
                 android:layout_width="300dp"
@@ -276,7 +271,6 @@
                     android:layout_marginTop="4dp"/>
             </LinearLayout>
 
-            <!-- Cuadro 6 -->
             <LinearLayout
                 android:id="@+id/layout_expandable6"
                 android:layout_width="300dp"
@@ -313,7 +307,6 @@
                     android:layout_marginTop="4dp"/>
             </LinearLayout>
 
-            <!-- Cuadro 7 -->
             <LinearLayout
                 android:id="@+id/layout_expandable7"
                 android:layout_width="300dp"
@@ -350,7 +343,6 @@
                     android:layout_marginTop="4dp"/>
             </LinearLayout>
 
-            <!-- Cuadro 8 -->
             <LinearLayout
                 android:id="@+id/layout_expandable8"
                 android:layout_width="300dp"
@@ -387,7 +379,6 @@
                     android:layout_marginTop="4dp"/>
             </LinearLayout>
 
-            <!-- Cuadro 9 -->
             <LinearLayout
                 android:id="@+id/layout_expandable9"
                 android:layout_width="300dp"

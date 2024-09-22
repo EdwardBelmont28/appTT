@@ -32,6 +32,15 @@
         <activity
             android:name=".EncyclopediaActivity"
             android:exported="true"/>
+        <activity
+            android:name=".AhorroActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".BalanceActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".EndeudamientoActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>
