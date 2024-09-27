@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Parte superior con el título "Balance Mensual" -->
+    <!-- Parte superior con el título "Polliwallet" -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Balance Mensual"
+            android:text="Polliwallet"
             android:textSize="24sp"
             android:layout_marginBottom="4dp"
             android:gravity="center"/>
@@ -30,7 +30,7 @@
             android:layout_marginBottom="4dp"/>
     </LinearLayout>
 
-    <!-- Scrollable Area con el contenido de Balance y el nuevo formato -->
+    <!-- Scrollable Area con el contenido de Balance, Ingresos, Gastos y el Historial -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,72 +44,36 @@
             android:padding="16dp"
             android:gravity="center_horizontal">
 
-            <!-- Leyenda con ícono y texto "Balance" -->
+            <!-- Sección con icono, leyenda "Balance Mensual" y línea divisoria -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_marginBottom="8dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="Icono"
-                    android:src="@drawable/ic_launcher_foreground" />
+                    android:src="@drawable/ic_launcher_foreground"
+                    android:contentDescription="Icono"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="Balance"
-                    android:textSize="18sp" />
+                    android:text="Balance Mensual"
+                    android:textSize="18sp"
+                    android:layout_marginStart="8dp"/>
             </LinearLayout>
 
             <!-- Línea divisoria -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginBottom="8dp"
-                android:background="#D3D3D3" />
-
-            <!-- Leyenda Descripción -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Introducción"
-                android:textSize="18sp" />
-
-            <!-- Aquí podrás escribir el texto de la Descripción -->
-            <TextView
-                android:id="@+id/tv_descripcion_balance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="Aquí podrás escribir el texto de la descripción de la actividad Balance..."
-                android:textSize="16sp" />
-
-            <!-- NUEVO CONTENIDO -->
-
-            <!-- Leyenda "Descripción" -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Descripción"
-                android:textSize="18sp"
-                android:layout_marginBottom="8dp"/>
-
-            <!-- Aquí puedes escribir el texto de la descripción -->
-            <TextView
-                android:id="@+id/tv_descripcion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Aquí puedes escribir el texto de la descripción..."
-                android:textSize="16sp"
+                android:background="#D3D3D3"
                 android:layout_marginBottom="16dp"/>
 
-            <!-- Leyenda "Ingresos" -->
+            <!-- Sección de Ingresos -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -125,7 +89,7 @@
                 android:textSize="16sp"
                 android:layout_marginBottom="8dp"/>
 
-            <!-- Spinner (barra desplegable) con 5 opciones para Categoría -->
+            <!-- Spinner para Categoría de Ingresos -->
             <Spinner
                 android:id="@+id/spinner_categoria"
                 android:layout_width="match_parent"
@@ -140,7 +104,7 @@
                 android:textSize="16sp"
                 android:layout_marginBottom="8dp"/>
 
-            <!-- Spinner (barra desplegable) con 5 opciones para Tipo -->
+            <!-- Spinner para Tipo de Ingresos -->
             <Spinner
                 android:id="@+id/spinner_tipo"
                 android:layout_width="match_parent"
@@ -155,7 +119,7 @@
                 android:textSize="16sp"
                 android:layout_marginBottom="8dp"/>
 
-            <!-- Campo de texto para ingresar un monto -->
+            <!-- Campo de texto para ingresar monto de Ingresos -->
             <EditText
                 android:id="@+id/et_monto"
                 android:layout_width="match_parent"
@@ -164,15 +128,121 @@
                 android:hint="Ingrese un monto"
                 android:layout_marginBottom="16dp"/>
 
-            <!-- Botón debajo del monto -->
+            <!-- Botón para guardar el monto de Ingresos -->
             <Button
                 android:id="@+id/btn_guardar_monto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Guardar Monto"
                 android:background="#696969"
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="24dp"/>
 
+            <!-- Sección de Gastos -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gastos"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Leyenda "Categoría" -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categoría"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Spinner para Categoría de Gastos -->
+            <Spinner
+                android:id="@+id/spinner_categoria_gastos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Leyenda "Tipo" -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tipo"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Spinner para Tipo de Gastos -->
+            <Spinner
+                android:id="@+id/spinner_tipo_gastos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Leyenda "Monto" -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monto"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Campo de texto para ingresar monto de Gastos -->
+            <EditText
+                android:id="@+id/et_monto_gastos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="Ingrese un monto"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Botón para guardar el monto de Gastos -->
+            <Button
+                android:id="@+id/btn_guardar_monto_gastos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guardar Monto"
+                android:background="#696969"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Leyenda de Balance Mensual -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Balance Mensual:"
+                android:textSize="18sp"/>
+
+            <!-- Texto donde se mostrará el balance actualizado -->
+            <TextView
+                android:id="@+id/tv_balance_mensual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Historial -->
+            <TextView
+                android:id="@+id/tv_historial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:background="#E0E0E0"
+                android:text="Historial:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- Botón para borrar el historial -->
+            <Button
+                android:id="@+id/btn_borrar_historial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Borrar Historial"
+                android:background="#FF0000"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="16dp"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
