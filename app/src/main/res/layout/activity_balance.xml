@@ -73,6 +73,21 @@
                 android:background="#D3D3D3"
                 android:layout_marginBottom="16dp"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Introducción"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_descripcion1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Aquí podrás escribir el texto de la descripción..."
+                android:textSize="16sp" />
+
             <!-- Sección de Ingresos -->
             <TextView
                 android:layout_width="wrap_content"

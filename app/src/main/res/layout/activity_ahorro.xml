@@ -1,14 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Parte superior con el título "Polliwallet" -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Esta es la actividad de Ahorro"
-        android:textSize="24sp" />
-</LinearLayout>
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:gravity="center_horizontal"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Polliwallet"
+            android:textSize="24sp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#D3D3D3"
+            android:layout_marginBottom="4dp"/>
+    </LinearLayout>
+
+    <!-- Scrollable Area con el contenido de Ahorro -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="72dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center_horizontal">
+
+            <!-- Sección con icono, leyenda "Tasa de Ahorros" y línea divisoria -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_launcher_foreground"
+                    android:contentDescription="Icono"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tasa de Ahorros"
+                    android:textSize="18sp"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <!-- Línea divisoria -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D3D3D3"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Introducción"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_descripcion2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Aquí podrás escribir el texto de la descripción..."
+                android:textSize="16sp" />
+
+            <!-- Sección de Ingresos Mensuales -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingresos Mensuales"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Campo de texto para ingresar el monto de Ingresos Mensuales -->
+            <EditText
+                android:id="@+id/et_ingresos_mensuales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="Ingrese sus ingresos mensuales"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Sección de Ahorro Mensual -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ahorro Mensual"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Campo de texto para ingresar el monto de Ahorro Mensual -->
+            <EditText
+                android:id="@+id/et_ahorro_mensual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="Ingrese su ahorro mensual"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Botón para calcular -->
+            <Button
+                android:id="@+id/btn_calcular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calcular"
+                android:background="#696969"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Historial -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Historial"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- TextView para mostrar el historial -->
+            <TextView
+                android:id="@+id/tv_historial_ahorro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:background="#E0E0E0"
+                android:text="Historial:"
+                android:textSize="16sp"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Botón para borrar el historial -->
+            <Button
+                android:id="@+id/btn_borrar_historial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Borrar Historial"
+                android:background="#FF0000"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="24dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Barra inferior con 4 botones estáticos -->
+    <LinearLayout
+        android:id="@+id/static_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:layout_gravity="bottom">
+
+        <Button
+            android:id="@+id/btn_enciclopedia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Enciclopedia"
+            android:layout_margin="8dp"
+            android:background="#696969"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btn_balance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Balance"
+            android:layout_margin="8dp"
+            android:background="#696969"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btn_ahorros"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ahorros"
+            android:layout_margin="8dp"
+            android:background="#696969"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btn_endeudamiento"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Endeudamiento"
+            android:layout_margin="8dp"
+            android:background="#696969"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

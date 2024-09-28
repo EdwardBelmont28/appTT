@@ -28,6 +28,9 @@ public class BalanceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_balance);
 
+        final TextView tvDescripcion1 = findViewById(R.id.tv_descripcion1);
+        tvDescripcion1.setText("Aquí podrás escribir el texto de la descripción...");
+
         // Inicializar SharedPreferences
         sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 
